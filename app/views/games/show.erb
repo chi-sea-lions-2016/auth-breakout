@@ -1,8 +1,12 @@
 <h3><%= @game.name %></h3>
 
+<p><%= @game.user.name %> created this game.</p>
+
+<% if owner?(@game)%>
 <a href="/games/<%= @game.id %>/edit">Edit</a>
 
 <form method="POST" action="/games/<%= @game.id %>">
   <input type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete">
 </form>
+<% end %>
