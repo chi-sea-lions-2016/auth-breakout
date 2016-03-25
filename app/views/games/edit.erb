@@ -1,0 +1,7 @@
+<h3>Edit Game</h3>
+
+<form method="POST" action="/games/<%= @game.id %>">
+  <input type="hidden" name="_method" value="PUT">
+  <input type="text" name="game[name]" value="<%= @game.name %>">
+  <input type="submit">
+</form>
